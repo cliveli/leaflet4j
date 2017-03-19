@@ -6,4 +6,8 @@
 /l4jdemo/client-web/target/
 /l4jdemo/client-ios/target/
 /l4jdemo/client-android/target/
-
+**/.project
+**/.settings/
+**/.classpath
+**/.DS_Store
+**/.factorypath
