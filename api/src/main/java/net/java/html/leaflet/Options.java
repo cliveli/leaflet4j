@@ -36,7 +36,7 @@ import net.java.html.js.JavaScriptResource;
  *
  * @author Christoph Sperl
  */
-@JavaScriptResource("leaflet-src.js")
+@JavaScriptResource("leaflet.js")
 final class Options {
     private static boolean initialized;
     static void initJS() {

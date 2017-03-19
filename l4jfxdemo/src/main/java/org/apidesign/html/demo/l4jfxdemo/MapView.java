@@ -65,13 +65,14 @@ public class MapView extends StackPane {
                 
                 // from here we just use the Leaflet API to show some stuff on the map
                 map.setView(new LatLng(51.505, -0.09), 13);
-                map.addLayer(new TileLayer("https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png",
-                        new TileLayerOptions()
-                                .setAttribution("Map data &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors, "
-                                                + "<a href='http://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, "
-                                                + "Imagery © <a href='http://mapbox.com'>Mapbox</a>")
-                                .setMaxZoom(18)
-                                .setId("eppleton.ia9c2p12")
+                map.addLayer(new TileLayer("http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
+                    new TileLayerOptions()
+                        .setAttribution(
+                            "Map data &copy; <a href='http://www.thunderforest.com/opencyclemap/'>OpenCycleMap</a> contributors, "
+                            + "<a href='http://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, "
+                            + "Imagery © <a href='http://www.thunderforest.com/'>Thunderforest</a>")
+                        .setMaxZoom(18)
+                        .setId("eppleton.ia9c2p12")
                 ));
                 
                 // sample code showing how to use the Java API
