@@ -134,6 +134,9 @@
                         <exclude>*</exclude>
                         <exclude>.*/**</exclude>
                         <exclude>**/leaflet.js</exclude>
+                        <exclude>**/leaflet.label.js</exclude>
+                        <exclude>**/leaflet.label-src.js</exclude>
+                        <exclude>**/LabelOptions.java</exclude>
                         <exclude>**/javadoc/resources/**</exclude>
                     </excludes>
                 </configuration>

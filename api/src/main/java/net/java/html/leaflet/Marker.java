@@ -396,6 +396,17 @@ public final class Marker extends ILayer {
         return this;
     }
 
+    /**
+     * Create A Label for this marker
+     * @param label the string of this label
+     * @param options options
+     * @return this
+     */
+    public Marker bindLabel(String label, LabelOptions options){
+        bindLabel(jsObj, label, options.getJSObj());
+        return this;
+    }
+
     @JavaScriptBody(args = {"jsObj", "html"}, body
             = "jsObj.bindPopup(html);")
     private static native void bindPopup1sInternal(Object jsObj, String html);
@@ -431,5 +442,10 @@ public final class Marker extends ILayer {
     @JavaScriptBody(args = {"jsObj", "html"}, body
             = "jsObj.setPopupContent(html);")
     private static native void setPopupContentInternal(Object jsObj, String html);
+
+
+    @JavaScriptBody(args = {"jsObj", "label", "options"}, body
+        = "jsObj.bindLabel(label,options);")
+    private static native void bindLabel(Object jsObj, String label, Object options);
 
 }
