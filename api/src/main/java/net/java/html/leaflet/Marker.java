@@ -407,6 +407,15 @@ public final class Marker extends ILayer {
         return this;
     }
 
+    /**
+     * Remove the existing label from this marker
+     * @return this
+     */
+    public Marker unbindLabel(){
+        unbindLabel(jsObj);
+        return this;
+    }
+
     @JavaScriptBody(args = {"jsObj", "html"}, body
             = "jsObj.bindPopup(html);")
     private static native void bindPopup1sInternal(Object jsObj, String html);
@@ -443,9 +452,12 @@ public final class Marker extends ILayer {
             = "jsObj.setPopupContent(html);")
     private static native void setPopupContentInternal(Object jsObj, String html);
 
-
     @JavaScriptBody(args = {"jsObj", "label", "options"}, body
         = "jsObj.bindLabel(label,options);")
     private static native void bindLabel(Object jsObj, String label, Object options);
+
+    @JavaScriptBody(args = {"jsObj"}, body
+        = "jsObj.bindLabel();")
+    private static native void unbindLabel(Object jsObj);
 
 }
