@@ -117,6 +117,16 @@ L.Label = L.Class.extend({
 		}
 	},
 
+	toggleClassName: function (className) {
+	  if (typeof this._container !== 'undefined') {
+	    if (L.DomUtil.hasClass(this._container, className)) {
+	      L.DomUtil.removeClass(this._container, className);
+	    } else {
+	      L.DomUtil.addClass(this._container, className);
+	    }
+	  }
+	},
+
 	setOpacity: function (opacity) {
 		this.options.opacity = opacity;
 

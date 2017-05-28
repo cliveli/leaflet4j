@@ -403,7 +403,7 @@ public final class Marker extends ILayer {
      * @return this
      */
     public Marker bindLabel(String label, LabelOptions options){
-        bindLabel(jsObj, label, options.getJSObj());
+        bindLabelInternal(jsObj, label, options.getJSObj());
         return this;
     }
 
@@ -412,8 +412,16 @@ public final class Marker extends ILayer {
      * @return this
      */
     public Marker unbindLabel(){
-        unbindLabel(jsObj);
+        unbindLabelInternal(jsObj);
         return this;
+    }
+
+    /**
+     *
+     * @return the Label instance
+     */
+    public LeafletLabel getLabel(){
+       return new LeafletLabel(getLabelInternal(jsObj));
     }
 
     @JavaScriptBody(args = {"jsObj", "html"}, body
@@ -454,10 +462,15 @@ public final class Marker extends ILayer {
 
     @JavaScriptBody(args = {"jsObj", "label", "options"}, body
         = "jsObj.bindLabel(label,options);")
-    private static native void bindLabel(Object jsObj, String label, Object options);
+    private static native void bindLabelInternal(Object jsObj, String label, Object options);
 
     @JavaScriptBody(args = {"jsObj"}, body
-        = "jsObj.bindLabel();")
-    private static native void unbindLabel(Object jsObj);
+        = "jsObj.unbindLabel();")
+    private static native void unbindLabelInternal(Object jsObj);
+
+
+    @JavaScriptBody(args = {"jsObj"}, body
+        = "return jsObj.getLabel();")
+    private static native Object getLabelInternal(Object jsObj);
 
 }

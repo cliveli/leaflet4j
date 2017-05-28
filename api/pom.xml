@@ -137,6 +137,7 @@
                         <exclude>**/leaflet.label.js</exclude>
                         <exclude>**/leaflet.label-src.js</exclude>
                         <exclude>**/LabelOptions.java</exclude>
+                        <exclude>**/LeafletLabel.java</exclude>
                         <exclude>**/javadoc/resources/**</exclude>
                     </excludes>
                 </configuration>
